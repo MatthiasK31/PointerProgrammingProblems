@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\PointerProgrammingProblems.cpp" />
-    <ClCompile Include="src\Function.cpp" />
+    <ClCompile Include="src\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\PPP.h" />
