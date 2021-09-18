@@ -6,8 +6,8 @@ void calculateAirVolume(int*, int*, int*, int*);
 void printAirvolume(int*);
 
 //2
-void fillName(std::string*);
-void printBackwards(std::string*);
+void fillName(char*);
+void printBackwards(char*);
 
 //3
 

@@ -12,7 +12,7 @@ Extra:
 
 int main()
 {
-	//////1
+	///////1
 	int length = 0; //variables
 	int width = 0; 
 	int height = 0;
@@ -24,7 +24,19 @@ int main()
 	printAirvolume(&volume);
 
 	///////2
-	std::string name = "";
+	//create a character array that will hold the name
+	char name[100] = "";
+	
+	//call the function for the user to enter a name; then print
+	fillName(name);
+	std::printf("Original Name: %s\n", name);
+	//call the function to reverse and print the new name
+	printBackwards(name);
+	std::printf("Reversed Name: %s\n", name);
 
+	///////3
+
+
+	
 
 }

@@ -6,6 +6,7 @@
 //1
 void enterData(int* pLength, int* pWidth, int* pHeight)
 {
+	//receive the dimensions for the building
 	std::cout << "Enter the length of the building: ";
 	std::cin >> *pLength;
 	std::cout << "Enter the width of the building: ";
@@ -25,13 +26,39 @@ void printAirvolume(int *pVolume)
 }
 
 //2
-void fillName(std::string* name)
+void fillName(char* pName)
 {
-	std::cout << "What is your name? ";
-	std::cin >> *name;
+	//ask user to enter the name
+	std::cout << "Enter a name: ";
+	std::cin >> pName;
 }
 
-void printBackwards(std::string* name)
+void printBackwards(char* pName)
 {
+	int l;
+	char *begin_p, *end_p, temp_p;
 
+	//take the length of the entered the name
+	l = std::strlen(pName);
+
+	//set the begin and end pointers to the initial position of the string	
+	begin_p = pName;
+	end_p = pName;
+
+	//set the initial position of end pointer to the last character of the name
+	for (int i = 0; i < l-1; i++)
+		end_p++;
+
+	//swap characters from the start and the end
+	//range of loop is half the length of the name for an even split
+	for (int i = 0; i < l / 2; i++) {
+
+		//swap algorithm
+		temp_p = *end_p;
+		*end_p = *begin_p;
+		*begin_p = temp_p;
+
+		//update the position of the begin and end pointer
+		begin_p++; end_p--;
+	}
 }
