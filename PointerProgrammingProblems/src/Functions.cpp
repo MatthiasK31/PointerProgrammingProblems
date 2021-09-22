@@ -1,3 +1,10 @@
+/*
+Matthias Kim
+Pointer Programming Problems Lab
+9/22/21
+Extra: added an additional array to sort
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -63,13 +70,14 @@ void printBackwards(char* pName)
 	}
 }
 
-void sortArray(int p_intArray[], int length)
+void sortArray(int* p_intArray, int length)
 {
-	std::cout << length << std::endl;
+	//create a temporary variable to store the other value while it is being swapped
 	int temp = 0;
 
-	for (int j = 0; j < 10; j++) {
-		for (int i = 0; i < 10; i++) {
+	//bubble sort to rearrange the array
+	for (int j = 0; j < length; j++) {
+		for (int i = 0; i < length-1; i++) {
 			if (p_intArray[i] > p_intArray[i + 1]) {
 				temp = p_intArray[i];
 				p_intArray[i] = p_intArray[i + 1];
@@ -77,4 +85,33 @@ void sortArray(int p_intArray[], int length)
 			}
 		}
 	}
+	//print array in method
+	std::cout << "Sorted Array(in method): ";
+	for (int i = 0; i < length; i++) {
+		std::cout << p_intArray[i] << " ";
+	}
+	std::cout << std::endl;
+
+}
+
+void descendSortArray(int* p_intArray, int length)
+{
+	//print unsorted array
+	std::cout << "Unsorted Array: ";
+	for (int i = 0; i < length; i++) {
+		std::cout << p_intArray[i] << " ";
+	}
+	std::cout << std::endl;
+
+	for (int i = length; i >= 0; i--)
+		for (int j = length; j > length - i; j--)
+			if (p_intArray[j] > p_intArray[j - 1])
+				std::swap(p_intArray[j], p_intArray[j - 1]);
+
+	
+	std::cout << "Sorted Array(in method): ";
+	for (int i = 0; i < length; i++) {
+		std::cout << p_intArray[i] << " ";
+	}
+	std::cout << std::endl;
 }

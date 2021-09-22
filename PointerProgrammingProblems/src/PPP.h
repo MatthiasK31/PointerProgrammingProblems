@@ -1,3 +1,10 @@
+/*
+Matthias Kim
+Pointer Programming Problems Lab
+9/22/21
+Extra: added an additional array to sort
+*/
+
 #pragma once
 
 //1
@@ -10,6 +17,5 @@ void fillName(char*);
 void printBackwards(char*);
 
 //3
-void sortArray(int [], int);
-
-
+void sortArray(int*, int);
+void descendSortArray(int*, int);
