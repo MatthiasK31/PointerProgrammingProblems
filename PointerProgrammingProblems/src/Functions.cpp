@@ -37,7 +37,7 @@ void printBackwards(char* pName)
 {
 	int l;
 	char *begin_p, *end_p, temp_p;
-
+	 
 	//take the length of the entered the name
 	l = std::strlen(pName);
 
@@ -60,5 +60,21 @@ void printBackwards(char* pName)
 
 		//update the position of the begin and end pointer
 		begin_p++; end_p--;
+	}
+}
+
+void sortArray(int p_intArray[], int length)
+{
+	std::cout << length << std::endl;
+	int temp = 0;
+
+	for (int j = 0; j < 10; j++) {
+		for (int i = 0; i < 10; i++) {
+			if (p_intArray[i] > p_intArray[i + 1]) {
+				temp = p_intArray[i];
+				p_intArray[i] = p_intArray[i + 1];
+				p_intArray[i + 1] = temp;
+			}
+		}
 	}
 }

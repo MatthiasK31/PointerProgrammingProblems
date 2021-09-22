@@ -35,6 +35,16 @@ int main()
 	std::printf("Reversed Name: %s\n", name);
 
 	///////3
+	int* intArray = new int[10] {3, 12, 1, 10, 9, 8, 7, 18, 21, 5 };
+	int arrLength = sizeof(intArray) + 2;
+
+	sortArray(intArray, arrLength);
+
+	for (int i = 0; i < arrLength; i++) {
+		std::cout << *intArray << " ";
+	}
+
+	delete[] intArray;
 
 
 	

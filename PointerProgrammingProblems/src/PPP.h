@@ -10,6 +10,6 @@ void fillName(char*);
 void printBackwards(char*);
 
 //3
+void sortArray(int [], int);
 
 
-//4
