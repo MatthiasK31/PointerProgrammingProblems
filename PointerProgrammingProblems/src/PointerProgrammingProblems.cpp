@@ -41,7 +41,7 @@ int main()
 	///////3
 	std::cout << "#3:" << std::endl;
 	//create new array to heap
-	int* intArray = new int[10]{ 3, 12, 1, 10, 9, 8, 7, 18, 21, 5 };
+	int* intArray = new int[10]{2,4,6,8,10,1,3,5,7,9};
 	int arrLength = 10;
 
 	//print unsorted array
