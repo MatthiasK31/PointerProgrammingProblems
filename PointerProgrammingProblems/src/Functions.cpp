@@ -20,8 +20,6 @@ void enterData(int* pLength, int* pWidth, int* pHeight)
 	std::cin >> *pWidth;
 	std::cout << "Enter the height of the building: ";
 	std::cin >> *pHeight;
-
-
 }
 void calculateAirVolume(int* pLength, int* pWidth, int* pHeight, int* pVolume)
 {
@@ -33,41 +31,25 @@ void printAirvolume(int *pVolume)
 }
 
 //2
-void fillName(char* pName)
+void fillName(std::string* pName)
 {
 	//ask user to enter the name
+	std::cin.ignore(INT_MAX, '\n');
 	std::cout << "Enter a name: ";
-	std::cin >> pName;
+	std::getline(std::cin, *pName);
+	std::printf("Original Name (function): %s\n", (*pName).c_str());
 }
 
-void printBackwards(char* pName)
+void printBackwards(std::string* pName)
 {
-	int l;
-	char *begin_p, *end_p, temp_p;
-	 
-	//take the length of the entered the name
-	l = std::strlen(pName);
+	//for loop that starts at the end of the string andd adds onto a string variable one character at a time
+	std::string reversedName = "";
+	int nameLength = (*pName).length();
 
-	//set the begin and end pointers to the initial position of the string	
-	begin_p = pName;
-	end_p = pName;
-
-	//set the initial position of end pointer to the last character of the name
-	for (int i = 0; i < l-1; i++)
-		end_p++;
-
-	//swap characters from the start and the end
-	//range of loop is half the length of the name for an even split
-	for (int i = 0; i < l / 2; i++) {
-
-		//swap algorithm
-		temp_p = *end_p;
-		*end_p = *begin_p;
-		*begin_p = temp_p;
-
-		//update the position of the begin and end pointer
-		begin_p++; end_p--;
+	for (int i = nameLength-1; i >= 0; i--) {
+		reversedName += (*pName).at(i);
 	}
+	std::printf("Reversed Name: %s\n", reversedName.c_str());
 }
 
 void sortArray(int* p_intArray, int length)

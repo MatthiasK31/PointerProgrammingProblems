@@ -13,6 +13,7 @@ Extra: added an additional array to sort
 int main()
 {
 	///////1
+	std::cout << "#1:" << std::endl;
 	int length = 0; //variables
 	int width = 0;
 	int height = 0;
@@ -26,19 +27,19 @@ int main()
 
 
 	///////2
-	//create a character array that will hold the name
-	char name[100] = "";
+	std::cout << "#2:" << std::endl;
 
+	//create a character array that will hold the name
+	std::string name = "";
 	//call the function for the user to enter a name; then print
-	fillName(name);
-	std::printf("Original Name: %s\n", name);
+	fillName(&name);
 	//call the function to reverse and print the new name
-	printBackwards(name);
-	std::printf("Reversed Name: %s\n", name);
+	printBackwards(&name);
+	std::printf("Original Name (main): %s\n", name.c_str());
 	std::cout << std::endl;
 
-
 	///////3
+	std::cout << "#3:" << std::endl;
 	//create new array to heap
 	int* intArray = new int[10]{ 3, 12, 1, 10, 9, 8, 7, 18, 21, 5 };
 	int arrLength = 10;

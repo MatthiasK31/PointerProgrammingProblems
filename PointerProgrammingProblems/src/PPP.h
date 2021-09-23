@@ -13,8 +13,8 @@ void calculateAirVolume(int*, int*, int*, int*);
 void printAirvolume(int*);
 
 //2
-void fillName(char*);
-void printBackwards(char*);
+void fillName(std::string*);
+void printBackwards(std::string*);
 
 //3
 void sortArray(int*, int);
